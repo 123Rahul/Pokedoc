@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">poke doc</string>
+    <string name="credits">pokeapi.co</string>
+    <string name="pokemon_name">pokemon name?</string>
+    <string name="search">search</string>
+    <string name="show_all">show All</string>
+    <string name="height">height</string>
+    <string name="weight">weight</string>
+    <string name="attack">attack</string>
+    <string name="defense">defense</string>
+    <string name="speed">speed</string>
+    <string name="abilities">abilities</string>
+    <string name="moves">moves</string>
+    <string name="hp">hp</string>
+    <string name="loading">loading...</string>
+</resources>
