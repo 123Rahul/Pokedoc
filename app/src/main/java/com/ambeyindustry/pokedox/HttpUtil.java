@@ -51,6 +51,7 @@ public final class HttpUtil {
                 Log.e("HttpUtil: ", "response code error: " + urlConnection.getResponseCode());
             }
         } catch (IOException exc) {
+            responseString = "no internet";
             Log.e("HttpUtil: ", exc.toString());
         }
         return responseString;
@@ -97,12 +98,14 @@ public final class HttpUtil {
     private static Pokemon getPokemonInfoFromJSON(String jsonString) {
         if (TextUtils.isEmpty(jsonString)) {
             return null;
+        } else if (jsonString.equals("no internet")) {
+            return new Pokemon(jsonString, jsonString);
         }
         Pokemon pokemon = null;
         String uri, name;
         int hp, exp, height, weight, attack, defense, speed;
         String[] types, abilities, moves;
-        Pokemon[] evolutions=null;
+        Pokemon[] evolutions = null;
         try {
             JSONObject object = new JSONObject(jsonString);
             uri = object.getString("resource_uri");
@@ -168,7 +171,7 @@ public final class HttpUtil {
 
     //get Pokemon Info
     public static Pokemon getPokemonInfo(String pokemonName) {
-        URL url = getURL("http://pokeapi.co/api/v1/pokemon/" + pokemonName);
+        URL url = getURL("http://pokeapi.co/api/v1/pokemon/" + pokemonName.toLowerCase());
         String jsonString = "";
         try {
             jsonString = getDataFromServer(url);

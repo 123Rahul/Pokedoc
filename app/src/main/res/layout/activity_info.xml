@@ -23,8 +23,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
             <TextView
+                    android:textSize="20sp"
                     android:layout_centerHorizontal="true"
                     android:text="@string/loading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </RelativeLayout>
+        <RelativeLayout
+                android:id="@+id/wrong"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <TextView
+                    android:textSize="20sp"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/wrong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+        </RelativeLayout>
+        <RelativeLayout
+                android:visibility="gone"
+                android:id="@+id/noInternet"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <TextView
+                    android:textSize="20sp"
+                    android:layout_centerHorizontal="true"
+                    android:text="@string/no_internet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
         </RelativeLayout>
@@ -36,7 +61,7 @@
             <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp">
+                    android:layout_height="wrap_content">
                 <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="0dp"
@@ -55,7 +80,7 @@
                             android:id="@+id/pokemon_types"
                             android:textSize="16sp"
                             android:layout_width="match_parent"
-                            android:layout_height="40dp"/>
+                            android:layout_height="wrap_content"/>
                 </LinearLayout>
                 <ImageView
                         android:id="@+id/dp"
@@ -220,19 +245,42 @@
                         android:paddingTop="30dp"
                         android:layout_width="match_parent"
                         android:layout_height="150dp">
-                    <ImageView
+                    <TextView
+                            android:id="@+id/from"
+                            android:paddingLeft="20dp"
                             android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            tools:text="pikachu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    <TextView
+                            android:id="@+id/to"
+                            android:paddingRight="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_gravity="end"
+                            tools:text="raichu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    <ImageView
+                            android:layout_marginTop="20dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentBottom="true"
                             android:id="@+id/dp1"
                             android:layout_width="110dp"
                             android:layout_height="110dp"/>
                     <ImageView
                             android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
                             android:id="@+id/arrw"
                             android:src="@drawable/right"
-                            android:layout_width="110dp"
-                            android:layout_height="110dp"/>
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:onClick="evolvePokemon"/>
                     <ImageView
+                            android:layout_marginTop="20dp"
                             android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
                             android:layout_gravity="right"
                             android:id="@+id/dp_ev"
                             android:layout_width="110dp"
